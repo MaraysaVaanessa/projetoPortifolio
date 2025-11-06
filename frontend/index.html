@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <title>Portfólio • Maraysa Vaanessa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Estilos principais -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body id="topo">
+    <!-- =======================================================
+         SEÇÃO HERO / TOPO — apresenta o nome e o destaque inicial
+         ======================================================= -->
+    <header class="hero">
+      <!-- 🔹 Logo do site -->
+      <a href="#topo" class="brand" aria-label="Logo Maraysa Vaanessa">
+        <img src="IMG/logo1.png" alt="Logo Maraysa Vaanessa" />
+      </a>
+
+      <!-- 🔹 Conteúdo principal do topo -->
+      <div class="container">
+        <h1 id="nome">Maraysa Vaanessa Moreira da Silva</h1>
+        <p id="headline" class="sub"></p>
+        <p id="bio" class="muted"></p>
+
+        <!-- 🔹 Botões principais -->
+        <div class="cta">
+          <a href="#projetos" class="btn primary">Ver Projetos</a>
+          <a href="#contato" class="btn ghost">Entre em Contato</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- =======================================================
+         CONTEÚDO PRINCIPAL
+         ======================================================= -->
+    <main class="container">
+      <!-- =======================================================
+           SEÇÃO SOBRE MIM
+           ======================================================= -->
+      <section id="sobre" class="about-intro">
+        <h2>Sobre Mim</h2>
+
+        <div class="about-wrap">
+          <!-- 🔹 Foto pessoal -->
+          <div class="about-photo">
+            <img src="IMG/avatar2.jpg" alt="Maraysa Vaanessa" />
+          </div>
+
+          <!-- 🔹 Texto de apresentação -->
+          <div class="about-text">
+            <h3 class="about-name">Maraysa Vaanessa</h3>
+            <p class="about-role">Data Science &amp; Engenharia de Software</p>
+
+            <p>
+              Sou Cientista de Dados e Desenvolvedora de Software, com foco em
+              soluções inteligentes e acessíveis, que unem tecnologia, empatia e
+              propósito. Gosto de transformar dados e ideias em produtos reais,
+              que simplificam a vida das pessoas, desde sistemas com IA aplicada
+              até interfaces web.
+            </p>
+
+            <p>
+              Atualmente curso Engenharia de Software e continuo me aprofundando
+              em Machine Learning e boas práticas de desenvolvimento. Tenho
+              experiência prática em Python, SQL, Power BI e desenvolvimento web
+              (HTML, CSS, JavaScript e Python), além de projetos envolvendo
+              reconhecimento de emoções com IA, análise de dados educacionais e
+              clínicos, e automação inteligente de tarefas.
+            </p>
+
+            <p>
+              Meu objetivo é criar soluções que integrem inteligência artificial
+              e usabilidade, com código limpo, visual claro e propósito humano.
+              Acredito que tecnologia só tem valor quando conecta pessoas e
+              resolve problemas reais, e é isso que me move todos os dias como
+              profissional e como aprendiz constante.
+            </p>
+
+            <p>
+              <strong>
+                Vamos conversar? Estou sempre aberta a novas oportunidades e
+                colaborações!
+              </strong>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- =======================================================
+           SEÇÃO DETALHES DE FORMAÇÃO
+           ======================================================= -->
+      <section id="sobre-detalhes" class="card">
+        <div class="grid-3 long-cards">
+          <!-- Formação -->
+          <article class="card">
+            <div class="card-icon">🎓</div>
+            <h3>Formação</h3>
+            <p>Tecnóloga em <strong>Data Science</strong>.</p>
+          </article>
+
+          <!-- Curso em andamento -->
+          <article class="card">
+            <div class="card-icon">💻</div>
+            <h3>Em Andamento</h3>
+            <p>Cursando <strong>Engenharia de Software</strong>.</p>
+          </article>
+
+          <!-- Especialização -->
+          <article class="card">
+            <div class="card-icon">🧠</div>
+            <h3>Especialização</h3>
+            <p>
+              Lógica de programação, Banco de dados (SQL, PostgreSQL, modelagem
+              relacional), Desenvolvimento Web e Machine Learning.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- =======================================================
+           SEÇÃO PROJETOS — preenchida dinamicamente via API
+           ======================================================= -->
+      <section id="projetos" class="cards">
+        <h2>Meus Projetos</h2>
+
+        <h3 class="subtitle">Acadêmicos</h3>
+        <div id="lista-academicos" class="grid-2"></div>
+
+        <h3 class="subtitle">Pessoais / Voluntários</h3>
+        <div id="lista-pessoais" class="grid-2"></div>
+      </section>
+
+      <!-- =======================================================
+           SEÇÃO CONTATO
+           ======================================================= -->
+      <section id="contato" class="cards">
+        <div class="container">
+          <h2>Entre em Contato</h2>
+          <p class="muted">
+            Estou aberta a oportunidades e colaborações. Sinta-se à vontade para
+            me contatar!
+          </p>
+
+          <div class="grid-2">
+            <!-- 📞 TELEFONE -->
+            <div class="card contact">
+              <div class="contact-icon">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/724/724664.png"
+                  alt="Ícone Telefone"
+                />
+              </div>
+              <h3>Telefone</h3>
+              <p id="tel">
+                <a href="https://wa.me/5583994540033" target="_blank"
+                  >(83) 99454-0033</a
+                >
+              </p>
+            </div>
+
+            <!-- ✉️ EMAIL -->
+            <div class="card contact">
+              <div class="contact-icon">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/542/542638.png"
+                  alt="Ícone E-mail"
+                />
+              </div>
+              <h3>Email</h3>
+              <span class="email-link" id="email">Enviar e-mail ↗</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- =======================================================
+         RODAPÉ
+         ======================================================= -->
+    <footer class="footer">
+      <div class="container">
+        <!-- Links sociais carregados dinamicamente -->
+        <div id="footer-social" class="social"></div>
+        <small>© <span id="ano"></span> Maraysa Vaanessa</small>
+      </div>
+    </footer>
+
+    <!-- =======================================================
+         SDK DO EMAILJS (envio de mensagens)
+         ======================================================= -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <!-- =======================================================
+         BOTÃO FLUTUANTE DO WHATSAPP
+         ======================================================= -->
+    <a
+      class="fab-whatsapp"
+      href="https://wa.me/5583994540033"
+      target="_blank"
+      rel="noopener"
+      aria-label="Fale comigo no WhatsApp"
+      title="Fale comigo no WhatsApp"
+    >
+    </a>
+
+    <!-- =======================================================
+         MODAL DE FORMULÁRIO DE CONTATO (EmailJS)
+         ======================================================= -->
+    <div id="formEmail" class="modal">
+      <div class="modal-content">
+        <!-- Botão para fechar -->
+        <span class="close" onclick="fecharFormulario()">&times;</span>
+        <h3>Enviar mensagem</h3>
+
+        <!-- Formulário de envio -->
+        <form id="contactForm">
+          <input type="text" name="from_name" placeholder="Seu nome" required />
+          <input
+            type="email"
+            name="from_email"
+            placeholder="Seu e-mail"
+            required
+          />
+          <input type="text" name="subject" placeholder="Assunto" required />
+          <textarea
+            name="message"
+            placeholder="Digite sua mensagem"
+            rows="5"
+            required
+          ></textarea>
+
+          <button type="submit" class="btn primary" id="btnEnviar">
+            Enviar
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- =======================================================
+         SCRIPT PRINCIPAL — conecta front-end ao backend (api.py)
+         ======================================================= -->
+    <script src="app.js"></script>
+  </body>
+</html>

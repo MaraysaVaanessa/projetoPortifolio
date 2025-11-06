@@ -1,0 +1,578 @@
+/* ===========================================================
+   🎨 VARIÁVEIS DE CORES E ESTILO (tema escuro, azul-marinho)
+   =========================================================== */
+:root {
+  /* Base e textos */
+  --bg: #0d1524;
+  --text: #e8eef5;
+  --muted: #8fa3bf;
+
+  /* Painéis / cartões */
+  --panel: #151f33;
+  --panel-2: #1c2740;
+
+  /* Marca / botões */
+  --brand: #556af4;
+  --brand-2: #8896ff;
+
+  /* Chips (social / botões pequenos) */
+  --chip: #1f2d4a;
+  --chip-text: #b0b9d8;
+
+  /* Layout */
+  --radius: 16px;
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  --brand-size: 110px;
+}
+
+/* ===========================================================
+   1) BASE / RESET
+   =========================================================== */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial,
+    sans-serif;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===========================================================
+   2) HERO (Topo) + LOGO + BOTÕES
+   =========================================================== */
+.hero {
+  position: relative;
+  padding: 100px 20px 80px;
+  text-align: center;
+  background: linear-gradient(
+    to bottom,
+    rgba(18, 29, 50, 0.9),
+    rgba(15, 22, 39, 0.95)
+  );
+  overflow: hidden;
+}
+
+/* --- Logo --- */
+.brand {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 4;
+  width: var(--brand-size);
+  height: var(--brand-size);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+.brand img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: filter 0.3s ease;
+}
+.brand:hover img {
+  filter: drop-shadow(0 0 10px rgba(85, 106, 244, 0.5));
+}
+
+/* --- Títulos do topo --- */
+.hero h1 {
+  font-size: clamp(32px, 6vw, 56px);
+  margin: 0 0 10px;
+  color: #aeb7ff;
+}
+.sub {
+  font-size: clamp(16px, 2.5vw, 22px);
+  margin: 0 0 6px;
+}
+.muted {
+  color: var(--muted);
+}
+
+/* --- Botões do topo --- */
+.cta {
+  margin: 24px 0;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.btn {
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(89, 96, 255, 0.3);
+  text-decoration: none;
+  color: var(--text);
+  transition: transform 160ms ease, box-shadow 160ms ease, filter 160ms ease;
+}
+
+/* Botão translúcido: Ver Projetos */
+.btn.primary {
+  background: rgba(85, 106, 244, 0.25);
+  border: 1px solid rgba(85, 106, 244, 0.35);
+}
+.btn.primary:hover {
+  background: rgba(85, 106, 244, 0.4);
+  box-shadow: 0 0 12px rgba(85, 106, 244, 0.35);
+  transform: translateY(-2px);
+}
+
+/* Botão translúcido: Entre em Contato */
+.btn.ghost {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(140, 160, 200, 0.2);
+  color: #cbd5e1;
+}
+.btn.ghost:hover {
+  background: rgba(140, 160, 200, 0.2);
+  color: #ffffff;
+  border-color: rgba(140, 160, 200, 0.4);
+  transform: translateY(-2px);
+}
+
+/* --- Hover / Foco global --- */
+@media (hover: hover) {
+  .brand:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.34);
+  }
+  .btn:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+    filter: brightness(1.03);
+  }
+  .btn:focus-visible {
+    outline: 2px solid var(--brand);
+    outline-offset: 2px;
+  }
+}
+
+/* ===========================================================
+   3) SEÇÕES / CARDS / GRELHAS
+   =========================================================== */
+#sobre {
+  margin-top: 20px;
+}
+.cards {
+  margin: 60px 0;
+}
+.cards h2 {
+  font-size: 32px;
+  margin: 0 0 18px;
+  color: #aeb7ff;
+}
+.subtitle {
+  color: #cfd5ff;
+  margin: 24px 0 10px;
+}
+
+/* --- Grelhas --- */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+}
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+/* --- Card padrão --- */
+.card {
+  background: linear-gradient(180deg, var(--panel), var(--panel-2));
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--shadow);
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card-icon {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+.card h3,
+.card h4 {
+  margin: 6px 0 8px;
+}
+
+/* --- Hover em cards --- */
+@media (hover: hover) {
+  .cards .grid-2 .card:hover,
+  #contato .card.contact:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 16px 38px rgba(0, 0, 0, 0.35);
+    background: linear-gradient(180deg, var(--panel), #243356);
+  }
+}
+
+/* --- Contato --- */
+#contato {
+  margin-top: 30px;
+}
+.contact p {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* ===========================================================
+   4) SOBRE MIM (Foto + Texto)
+   =========================================================== */
+.about-wrap {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 28px;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 22px;
+}
+.about-intro {
+  padding: 20px 0 8px;
+  background: transparent;
+}
+.about-intro h2 {
+  margin: 0 0 14px;
+}
+.about-photo img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.about-text .about-name {
+  margin: 0 0 6px;
+  font-size: clamp(20px, 3vw, 28px);
+  color: #e9ecff;
+}
+.about-text .about-role {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-weight: 600;
+}
+.about-text p {
+  margin: 0 0 10px;
+  line-height: 1.6;
+}
+@media (max-width: 820px) {
+  .about-wrap {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===========================================================
+   5) RODAPÉ / REDES SOCIAIS
+   =========================================================== */
+.footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 26px 0;
+  color: var(--muted);
+  text-align: center;
+}
+.social {
+  margin-top: 16px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+.social a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: var(--chip);
+  color: var(--chip-text);
+  text-decoration: none;
+  transition: transform 160ms ease, box-shadow 160ms ease, filter 160ms ease;
+}
+
+/* --- Cores personalizadas --- */
+.social a[href*="github"] {
+  background: rgba(36, 41, 46, 0.35);
+  color: #fff;
+}
+.social a[href*="linkedin"] {
+  background: rgba(10, 102, 194, 0.35);
+  color: #fff;
+}
+.social a[href*="instagram"] {
+  background: linear-gradient(
+    45deg,
+    rgba(193, 53, 132, 0.35),
+    rgba(225, 48, 108, 0.35),
+    rgba(245, 133, 41, 0.35)
+  );
+  color: #fff;
+}
+
+/* --- Hover redes sociais --- */
+@media (hover: hover) {
+  .social a:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+    filter: brightness(1.1);
+  }
+  .social a:focus-visible {
+    outline: 2px solid var(--brand);
+    outline-offset: 2px;
+  }
+}
+
+/* ===========================================================
+   6) BOTÃO WHATSAPP FLUTUANTE
+   =========================================================== */
+.fab-whatsapp {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(6, 228, 36, 0.25);
+  box-shadow: 0 8px 24px rgba(6, 228, 36, 0.15);
+  z-index: 999;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
+  animation: pulse 3.6s ease-in-out infinite;
+}
+.fab-whatsapp::before {
+  content: "";
+  width: 28px;
+  height: 28px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+  background-image: url("data:image/svg+xml,%3Csvg width='256' height='256' viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23ffffff' d='M128 0C57.3 0 0 57.3 0 128c0 24.5 7 47.3 19.1 66.6L9.2 246L62 236.3C80.7 248.1 103.3 256 128 256c70.7 0 128-57.3 128-128S198.7 0 128 0m75.1 182.1c-3.1 8.8-18.1 16.7-24.9 17.2c-6.6.5-15 .8-24.2-1.5c-5.6-1.3-12.8-4.2-22-8.9c-38.7-19.5-63.7-62.9-65.7-65.9s-15.7-20.9-15.7-40s9.9-28.4 13.4-32.3c3.5-3.9 7.7-4.9 10.2-4.9c2.5 0 5 0 7.2.1c2.3.1 5.4-.9 8.4 6.4c3.1 7.5 10.5 25.9 11.5 27.8c.9 1.9 1.6 4.1.3 6.6c-1.2 2.5-1.8 4.1-3.5 6.4c-1.8 2.2-3.7 4.9-5.3 6.6c-1.8 1.8-3.7 3.8-1.6 7.2c2.2 3.4 9.8 16.1 21.1 26.1c14.4 12.7 26.7 16.7 30.1 18.5c3.4 1.8 5.5 1.5 7.6-.9s8.8-10.1 11.2-13.6c2.3-3.5 4.8-2.9 8-.9c3.3 1.9 20.8 9.8 24.4 11.5c3.6 1.7 6 2.6 6.8 4.1c.9 1.4.9 8.3-2.2 17.1'/%3E%3C/svg%3E");
+}
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+}
+@media (hover: hover) {
+  .fab-whatsapp:hover {
+    background: rgba(6, 228, 36, 0.4);
+    box-shadow: 0 0 20px rgba(6, 228, 36, 0.25);
+    transform: translateY(-2px);
+  }
+}
+
+/* ===========================================================
+   7) MODAL DE E-MAIL
+   =========================================================== */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background: linear-gradient(180deg, var(--panel), var(--panel-2));
+  padding: 20px;
+  border-radius: 12px;
+  width: 92%;
+  max-width: 460px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  position: relative;
+}
+.modal-content h3 {
+  margin: 0 0 12px;
+  color: #aeb7ff;
+}
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  margin: 8px 0;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+.close {
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  font-size: 22px;
+  color: #bbb;
+  cursor: pointer;
+}
+.close:hover {
+  color: #fff;
+}
+.email-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(120, 144, 156, 0.18);
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  user-select: none;
+  transition: 0.2s ease;
+}
+.email-link:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
+
+/* ===========================================================
+   8) ACESSIBILIDADE E MOBILE
+   =========================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .btn,
+  .social a,
+  .fab-whatsapp {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+@media (max-width: 720px) {
+  .brand {
+    width: 48px;
+    height: 48px;
+    top: 14px;
+    left: 14px;
+  }
+}
+
+/* Fim do arquivo styles.css */
+
+/* ===========================================================
+   SEÇÃO DE CONTATO — VISUAL IGUAL AO MODELO
+   =========================================================== */
+
+#contato h2 {
+  text-align: center;
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+#contato p.muted {
+  text-align: center;
+  color: #b0bddb;
+  margin-bottom: 35px;
+}
+
+/* ---- Layout dos cards ---- */
+#contato .grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+/* ---- Cards ---- */
+#contato .card.contact {
+  background: linear-gradient(180deg, #121a2c, #1b243a);
+  border-radius: 16px;
+  padding: 28px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease;
+}
+#contato .card.contact:hover {
+  transform: translateY(-3px);
+}
+
+/* ---- Ícone com fundo translúcido ---- */
+.contact-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 14px;
+  background: rgba(85, 106, 244, 0.15);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contact-icon img {
+  width: 24px;
+  height: 24px;
+}
+
+/* ---- Títulos e links ---- */
+#contato .card.contact h3 {
+  color: #fff;
+  margin-bottom: 8px;
+}
+#contato .card.contact p a {
+  color: #89a7ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+#contato .card.contact p a:hover {
+  text-decoration: underline;
+}
+
+/* ---- Botão "Enviar e-mail" ---- */
+#contato .email-link {
+  display: inline-block;
+  background: linear-gradient(
+    90deg,
+    var(--brand),
+    var(--brand-2)
+  ); /* azul padrão */
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(85, 106, 244, 0.25);
+  margin-top: 12px;
+}
+
+/* efeito hover */
+#contato .email-link:hover {
+  background: linear-gradient(90deg, #6577ff, #9aa7ff);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(85, 106, 244, 0.35);
+}
+
+/* 🔹 Remove cor de fundo e borda de qualquer elemento que envolva o e-mail */
+#contato .card.contact > div,
+#contato .card.contact > span,
+#contato .card.contact > p,
+#contato .card.contact > a:not(.email-link) {
+  background: transparent !important;
+  color: var(--text) !important;
+  box-shadow: none !important;
+  border: none !important;
+}
